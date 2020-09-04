@@ -5,12 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.carolmusyoka.aadpracticeproject.R
 
 /**
  * A simple [Fragment] subclass.
  */
-class LearningActivity : Fragment() {
+class LearningFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

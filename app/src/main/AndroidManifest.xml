@@ -21,6 +21,8 @@
             android:theme="@style/AppTheme2">
 
         </activity>
+        <activity android:name=".ui.main.view.LearningFragment" />
+        <activity android:name=".ui.main.view.SkillFragment" />
     </application>
 
 </manifest>

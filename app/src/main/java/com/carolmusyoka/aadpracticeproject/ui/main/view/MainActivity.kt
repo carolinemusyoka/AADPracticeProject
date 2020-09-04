@@ -52,8 +52,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setStatePageAdapter(){
         val myViewPageStateAdapter: MyViewPageStateAdapter = MyViewPageStateAdapter(supportFragmentManager)
-        myViewPageStateAdapter.addFragment(LearningActivity(),"Learning Leaders")
-        myViewPageStateAdapter.addFragment(SkillActivity(),"Skill IQ Leaders ")
+        myViewPageStateAdapter.addFragment(LearningFragment(),"Learning Leaders")
+        myViewPageStateAdapter.addFragment(SkillFragment(),"Skill IQ Leaders ")
         viewPager.adapter=myViewPageStateAdapter
         tabLayout.setupWithViewPager(viewPager,true)
 
