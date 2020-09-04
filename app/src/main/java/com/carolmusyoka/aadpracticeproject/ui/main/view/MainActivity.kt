@@ -1,4 +1,4 @@
-package com.carolmusyoka.aadpracticeproject
+package com.carolmusyoka.aadpracticeproject.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.carolmusyoka.aadpracticeproject.R
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -50,9 +51,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setStatePageAdapter(){
-        val myViewPageStateAdapter:MyViewPageStateAdapter = MyViewPageStateAdapter(supportFragmentManager)
-        myViewPageStateAdapter.addFragment(LearningFragment(),"Learning Leaders")
-        myViewPageStateAdapter.addFragment(SkillFragment(),"Skill IQ Leaders ")
+        val myViewPageStateAdapter: MyViewPageStateAdapter = MyViewPageStateAdapter(supportFragmentManager)
+        myViewPageStateAdapter.addFragment(LearningActivity(),"Learning Leaders")
+        myViewPageStateAdapter.addFragment(SkillActivity(),"Skill IQ Leaders ")
         viewPager.adapter=myViewPageStateAdapter
         tabLayout.setupWithViewPager(viewPager,true)
 
