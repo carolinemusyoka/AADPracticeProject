@@ -8,6 +8,6 @@ interface ApiService {
     @GET("api/hours")
     suspend fun getLearningLeaders(): List<LearningHoursItem>
 
-    @GET("api/skills")
+    @GET("api/skilliq")
     suspend fun getSkillLeaders(): List<SkillItem>
 }

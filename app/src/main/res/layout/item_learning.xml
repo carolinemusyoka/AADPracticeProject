@@ -17,7 +17,7 @@
         app:cardElevation="5dp"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintVertical_bias="0.0"
-        card_view:cardCornerRadius="32dp"
+        card_view:cardCornerRadius="20dp"
         card_view:layout_constraintBottom_toBottomOf="parent"
         card_view:layout_constraintEnd_toEndOf="parent"
         card_view:layout_constraintStart_toStartOf="parent"

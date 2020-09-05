@@ -78,8 +78,8 @@ class LearningFragment : Fragment() {
                     Status.SUCCESS -> {
                         recycler_learning.visibility = View.VISIBLE
                         progressBar.visibility = View.GONE
-                        resource.data?.let { heroResponse
-                            -> retrieveList(heroResponse) }
+                        resource.data?.let { learningLead
+                            -> retrieveList(learningLead) }
                     }
                     Status.ERROR -> {
                         recycler_learning.visibility = View.VISIBLE
