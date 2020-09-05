@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.carolmusyoka.aadpracticeproject.R
+import com.carolmusyoka.aadpracticeproject.ui.learning.view.LearningFragment
+import com.carolmusyoka.aadpracticeproject.ui.skill.view.SkillFragment
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -51,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setStatePageAdapter(){
-        val myViewPageStateAdapter: MyViewPageStateAdapter = MyViewPageStateAdapter(supportFragmentManager)
+        val myViewPageStateAdapter = MyViewPageStateAdapter(supportFragmentManager)
         myViewPageStateAdapter.addFragment(LearningFragment(),"Learning Leaders")
         myViewPageStateAdapter.addFragment(SkillFragment(),"Skill IQ Leaders ")
         viewPager.adapter=myViewPageStateAdapter
@@ -59,11 +61,11 @@ class MainActivity : AppCompatActivity() {
 
     }
     class MyViewPageStateAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm){
-        val fragmentList:MutableList<Fragment> = ArrayList<Fragment>()
-        val fragmentTitleList:MutableList<String> = ArrayList<String>()
+        private val fragmentList:MutableList<Fragment> = ArrayList<Fragment>()
+        private val fragmentTitleList:MutableList<String> = ArrayList<String>()
 
         override fun getItem(position: Int): Fragment {
-            return fragmentList.get(position)
+            return fragmentList[position]
         }
 
         override fun getCount(): Int {
@@ -71,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            return fragmentTitleList.get(position)
+            return fragmentTitleList[position]
         }
 
         fun addFragment(fragment: Fragment, title:String){

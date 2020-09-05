@@ -3,6 +3,7 @@
     package="com.carolmusyoka.aadpracticeproject">
     
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,8 +22,8 @@
             android:theme="@style/AppTheme2">
 
         </activity>
-        <activity android:name=".ui.main.view.LearningFragment" />
-        <activity android:name=".ui.main.view.SkillFragment" />
+        <activity android:name=".ui.learning.view.LearningFragment" />
+        <activity android:name=".ui.skill.view.SkillFragment" />
     </application>
 
 </manifest>
