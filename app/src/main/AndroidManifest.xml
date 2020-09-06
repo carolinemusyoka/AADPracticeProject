@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.carolmusyoka.aadpracticeproject">
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,17 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.view.SplashScreen"
+        <activity android:name=".SubmitActivity"></activity>
+        <activity
+            android:name=".ui.main.view.SplashScreen"
             android:theme="@style/SplashAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.view.MainActivity"
-            android:theme="@style/AppTheme2">
-
-        </activity>
+        <activity
+            android:name=".ui.main.view.MainActivity"
+            android:theme="@style/AppTheme2"></activity>
         <activity android:name=".ui.learning.view.LearningFragment" />
         <activity android:name=".ui.skill.view.SkillFragment" />
     </application>
