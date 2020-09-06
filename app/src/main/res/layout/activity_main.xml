@@ -32,6 +32,7 @@
                 android:text="LEADERBOARD" />
 
             <Button
+                android:id="@+id/submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="170dp"

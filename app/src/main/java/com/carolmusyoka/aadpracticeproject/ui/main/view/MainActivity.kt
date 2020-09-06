@@ -1,12 +1,15 @@
 package com.carolmusyoka.aadpracticeproject.ui.main.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.carolmusyoka.aadpracticeproject.R
+import com.carolmusyoka.aadpracticeproject.SubmitActivity
 import com.carolmusyoka.aadpracticeproject.ui.learning.view.LearningFragment
 import com.carolmusyoka.aadpracticeproject.ui.skill.view.SkillFragment
 import com.google.android.material.tabs.TabLayout
@@ -14,10 +17,17 @@ import com.google.android.material.tabs.TabLayout
 class MainActivity : AppCompatActivity() {
     lateinit var viewPager: ViewPager
     lateinit var tabLayout: TabLayout
+    private lateinit var submitButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        submitButton = findViewById(R.id.submit)
+
+        submitButton.setOnClickListener {
+            val intent = Intent(this,SubmitActivity::class.java)
+            startActivity(intent)
+        }
 
         initViews()
         setStatePageAdapter()
