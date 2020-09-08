@@ -28,16 +28,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="25dp"
-                android:text="LEADERBOARD" />
+                android:layout_marginTop="15dp"
+                android:text="LEADERBOARD"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/submit"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="170dp"
+                android:layout_marginStart="60dp"
                 android:layout_marginTop="10dp"
-                android:text="submit" />
+                android:background="@drawable/round_button"
+                android:text="submit"
+                android:textColor="@color/black" />
         </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.tabs.TabLayout
@@ -49,7 +53,7 @@
         android:minHeight="?attr/actionBarSize"
         app:tabGravity="fill"
         app:tabTextColor="#FFF"
-        app:tabSelectedTextColor="@color/colorAccent">
+        app:tabSelectedTextColor="#ffffff">
 
 
     </com.google.android.material.tabs.TabLayout>

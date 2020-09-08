@@ -41,10 +41,10 @@ class SubmitActivity : AppCompatActivity() {
                 !TextUtils.isEmpty(githubLink.text?.trim().toString())
             ) {
 
-                val _firstname = firstName.text.toString()
-                val _lastname = lastName.text.toString()
-                val _emailaddress = email.text.toString()
-                val _projectlink = githubLink.text.toString()
+                val firstname = firstName.text.toString()
+                val lastname = lastName.text.toString()
+                val emailaddress = email.text.toString()
+                val projectlink = githubLink.text.toString()
 
             val alert: AlertDialog.Builder = AlertDialog.Builder(this)
                 alert.setTitle("Submit Alert")
@@ -54,7 +54,7 @@ class SubmitActivity : AppCompatActivity() {
             { p0, p1 ->
                 var formApiInterface: FormApiInterface =  FormRetrofitBuilder.getRetrofit()
                     .create(FormApiInterface::class.java)
-                formApiInterface.addData(_firstname, _lastname, _emailaddress, _projectlink)
+                formApiInterface.addData(firstname, lastname, emailaddress, projectlink)
                     ?.enqueue(object : retrofit2.Callback<Void?> {
 
 
