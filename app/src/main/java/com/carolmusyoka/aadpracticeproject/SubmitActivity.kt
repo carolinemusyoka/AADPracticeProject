@@ -5,12 +5,15 @@ import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
+import android.text.Layout
 import android.text.TextUtils
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.carolmusyoka.aadpracticeproject.data.api.form.FormApiInterface
+import com.carolmusyoka.aadpracticeproject.data.api.form.FormRetrofitBuilder
 import kotlinx.android.synthetic.main.activity_submit.*
 import retrofit2.Call
 import retrofit2.Response
@@ -27,16 +30,8 @@ class SubmitActivity : AppCompatActivity() {
         setContentView(R.layout.activity_submit)
         submitButton = findViewById(R.id.submitButton)
 
-        val successDialog = Dialog(this)
 
-        successDialog.setContentView(R.layout.submit_successful_dialog)
-        successDialog.window?.setLayout(1000,1000)
-        successDialog.setTitle("Successful")
 
-        val errorDialog = Dialog(this)
-        errorDialog.setContentView(R.layout.submit_error_dialog)
-        errorDialog.window?.setLayout(1000,1000)
-        errorDialog.setTitle("Error")
 
 
         submitButton.setOnClickListener {
@@ -51,14 +46,20 @@ class SubmitActivity : AppCompatActivity() {
                 val _emailaddress = email.text.toString()
                 val _projectlink = githubLink.text.toString()
 
-            val alert: AlertDialog.Builder = AlertDialog.Builder(this,R.style.Alertdialogtheme)
-                lateinit var formApiInterface: FormApiInterface
-            alert.setTitle("are you sure?")
-            alert.setPositiveButton("yes") { p0, p1 ->
+            val alert: AlertDialog.Builder = AlertDialog.Builder(this)
+                alert.setTitle("Submit Alert")
+                alert.setMessage("Are you sure?")
+                alert.setPositiveButton("yes")
+
+            { p0, p1 ->
+                var formApiInterface: FormApiInterface =  FormRetrofitBuilder.getRetrofit()
+                    .create(FormApiInterface::class.java)
                 formApiInterface.addData(_firstname, _lastname, _emailaddress, _projectlink)
                     ?.enqueue(object : retrofit2.Callback<Void?> {
+
+
                         override fun onFailure(call: Call<Void?>, t: Throwable) {
-                            errorDialog.show()
+                            errorDialog()
                         }
 
                         override fun onResponse(
@@ -70,7 +71,7 @@ class SubmitActivity : AppCompatActivity() {
                                 "Submitted successfully",
                                 Toast.LENGTH_SHORT
                             ).show()
-                            successDialog.show();
+                            successDialog()
                         }
 
                     })
@@ -81,6 +82,19 @@ class SubmitActivity : AppCompatActivity() {
                 Toast.makeText(this,"Invalid form data", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun errorDialog(){
+        val errorDialog = AlertDialog.Builder(this)
+        errorDialog.setView(R.layout.submit_error_dialog)
+        errorDialog.show()
+
+    }
+    private fun successDialog(){
+        val successDialog = AlertDialog.Builder(this)
+        successDialog.setView(R.layout.submit_successful_dialog)
+        successDialog.show()
+
     }
 
 
