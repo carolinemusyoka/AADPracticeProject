@@ -36,12 +36,12 @@ Link to project = entry.284483984
 
 # Project Flow.
 <p align="center">
-<img src="images/screen1.png">
-<img src="images/screen2.png">
-<img src="images/screen3.png">
-<img src="images/screen4.png">
-<img src="images/screen5.png">
-<img src="images/screen6.png">
-<img src="images/screen7.png">
-<img src="images/screen8.png">
+<img src="images/screen1.png"width="30%>
+<img src="images/screen2.png width="30%">
+<img src="images/screen3.png width="30%">
+<img src="images/screen4.png width="30%">
+<img src="images/screen5.png width="30%">
+<img src="images/screen6.png width="30%">
+<img src="images/screen7.png width="30%">
+<img src="images/screen8.png width="30%">
   </p>
