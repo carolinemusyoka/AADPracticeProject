@@ -33,7 +33,7 @@ class SkillAdapter: RecyclerView.Adapter<SkillAdapter.SkillViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SkillViewHolder =
 
         SkillViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_learning, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_skill, parent, false)
         )
 
     override fun getItemViewType(position: Int): Int {
